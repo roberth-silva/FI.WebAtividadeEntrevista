@@ -1,0 +1,24 @@
+﻿@model WebAtividadeEntrevista.Models.ClienteModel
+
+<table id="tblBeneficiarios" class="table">
+    <thead>
+        <tr>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Beneficiarios)
+        {
+            <tr>
+                <td>@item.CPF</td>
+                <td>@item.Nome</td>                
+                <td>
+                    <button class="btn btn-primary select-item" data-id="@item.Id" data-nome="@item.Nome" data-cpf="@item.CPF" data-IdCliente="@item.IdCliente">Editar</button>
+                    <button class="btn btn-primary delete-item" data-id="@item.Id" data-IdCliente="@item.IdCliente">Deletar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
